@@ -3,6 +3,8 @@
  */
 package com.crossover.techtrial.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,10 @@ public class RideServiceImpl implements RideService{
     if (optionalRide.isPresent()) {
       return optionalRide.get();
     }else return null;
+  }
+
+  public Iterable<Ride> findAllRides() {
+    return rideRepository.findAll();
   }
 
 }

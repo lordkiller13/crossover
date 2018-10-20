@@ -35,13 +35,12 @@ public class PersonController {
     return ResponseEntity.ok(personService.getAll());
   }
   
-  @GetMapping(path = "/api/person/{perso-id}")
-  public ResponseEntity<Person> getPersonById(@PathVariable(name="person-id", required=true)Long personId) {
+  @GetMapping(path = "/api/person/{person-id}")
+  public ResponseEntity<Person> getPersonById(@PathVariable(name="person-id")Long personId) {
     Person person = personService.findById(personId);
     if (person != null) {
       return ResponseEntity.ok(person);
     }
     return ResponseEntity.notFound().build();
   }
-  
 }

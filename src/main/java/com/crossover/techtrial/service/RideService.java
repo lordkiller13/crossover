@@ -16,5 +16,5 @@ public interface RideService {
   
   public Ride findById(Long rideId);
   
-
+  public Iterable<Ride> findAllRides();
 }
